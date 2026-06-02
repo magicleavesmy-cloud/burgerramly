@@ -434,7 +434,15 @@ function App() {
             onClick={() => setIsCartOpen(true)}
             aria-label="Open cart"
           >
-            <span className="cart-glyph">Cart</span>
+            <svg
+              className="cart-glyph"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M6.2 6.2h14l-1.5 7.4a2 2 0 0 1-2 1.6H9.1a2 2 0 0 1-2-1.6L5.6 3.8H3" />
+              <circle cx="9.6" cy="19" r="1.5" />
+              <circle cx="17" cy="19" r="1.5" />
+            </svg>
             {cartCount > 0 && <strong>{cartCount}</strong>}
           </button>
         </header>
