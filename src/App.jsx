@@ -461,12 +461,6 @@ function App() {
             </motion.div>
           </div>
 
-          <motion.img
-            className="hero-burger"
-            src="https://images.deliveryhero.io/image/fd-my/LH/r708-listing.jpg"
-            alt="Burger Ramly"
-            variants={itemVariants}
-          />
         </motion.section>
 
         <section className="menu-section" aria-label="Menu">

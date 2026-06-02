@@ -145,28 +145,35 @@ button:disabled {
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 42%;
-  min-height: 218px;
+  min-height: 220px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 28px;
   background:
-    radial-gradient(circle at 78% 24%, rgba(244, 190, 67, 0.2), transparent 12rem),
-    linear-gradient(135deg, rgba(31, 29, 24, 0.98), rgba(14, 13, 11, 0.98));
+    radial-gradient(circle at 24% 54%, rgba(244, 190, 67, 0.26), transparent 12rem),
+    linear-gradient(90deg, rgba(8, 8, 7, 0.95) 0%, rgba(8, 8, 7, 0.78) 46%, rgba(8, 8, 7, 0.46) 100%),
+    linear-gradient(0deg, rgba(8, 8, 7, 0.92) 0%, rgba(8, 8, 7, 0.2) 48%, rgba(8, 8, 7, 0.62) 100%),
+    radial-gradient(circle at 80% 30%, rgba(244, 190, 67, 0.16), transparent 13rem),
+    url("https://images.deliveryhero.io/image/fd-my/LH/r708-listing.jpg"),
+    linear-gradient(135deg, #1f1d18, #0e0d0b);
+  background-position: left center, center, center, center, center, center;
+  background-size: cover;
+  background-repeat: no-repeat;
   box-shadow:
     0 24px 70px rgba(0, 0, 0, 0.46),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -78px 110px rgba(0, 0, 0, 0.34);
 }
 
 .hero::after {
   position: absolute;
-  inset: auto -26px -70px auto;
-  width: 180px;
-  height: 180px;
+  inset: 18px auto auto 14px;
+  width: 210px;
+  height: 150px;
   content: "";
   border-radius: 50%;
-  background: rgba(244, 190, 67, 0.15);
-  filter: blur(10px);
+  background: rgba(244, 190, 67, 0.16);
+  filter: blur(28px);
 }
 
 .hero-content {
@@ -175,7 +182,8 @@ button:disabled {
   display: grid;
   align-content: center;
   gap: 10px;
-  padding: 24px 0 24px 20px;
+  max-width: 68%;
+  padding: 28px 0 28px 22px;
 }
 
 .eyebrow,
@@ -195,8 +203,8 @@ button:disabled {
   max-width: 8ch;
   margin: 0;
   color: #fff7e8;
-  font-size: clamp(2.15rem, 10.5vw, 4.8rem);
-  line-height: 0.93;
+  font-size: clamp(2.55rem, 11vw, 5.3rem);
+  line-height: 0.94;
   letter-spacing: 0.01em;
 }
 
@@ -226,20 +234,6 @@ button:disabled {
   box-shadow:
     0 14px 30px rgba(244, 190, 67, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.38);
-}
-
-.hero-burger {
-  position: relative;
-  z-index: 1;
-  align-self: end;
-  justify-self: end;
-  width: min(230px, 118%);
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 32px 0 0 32px;
-  transform: translateX(16px) scale(1.05);
-  filter: saturate(1.08) contrast(1.04);
 }
 
 .menu-section {
@@ -280,13 +274,16 @@ button:disabled {
 
 .product-row {
   display: grid;
-  grid-auto-columns: minmax(148px, 46%);
+  grid-auto-columns: 170px;
   grid-auto-flow: column;
   gap: 12px;
   overflow-x: auto;
+  overflow-y: visible;
   padding: 2px 2px 8px;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .product-row::-webkit-scrollbar {
@@ -294,6 +291,7 @@ button:disabled {
 }
 
 .product-card {
+  position: relative;
   min-width: 0;
   overflow: hidden;
   cursor: pointer;
@@ -311,7 +309,7 @@ button:disabled {
 .product-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 1.18;
+  height: 140px;
   object-fit: cover;
   transition: transform 480ms cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -323,7 +321,8 @@ button:disabled {
 .card-body {
   display: grid;
   gap: 7px;
-  padding: 11px;
+  min-height: 112px;
+  padding: 10px;
 }
 
 .card-body h3,
@@ -339,6 +338,7 @@ button:disabled {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  margin-top: auto;
 }
 
 .card-footer p {
@@ -349,9 +349,12 @@ button:disabled {
 }
 
 .card-footer button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   place-items: center;
   border-radius: 12px;
   background: #f4be43;
@@ -982,16 +985,14 @@ button:disabled {
   }
 
   .hero {
-    grid-template-columns: minmax(0, 1fr) 36%;
-    min-height: 260px;
+    min-height: 274px;
+    background-position: left center, center, center, center, center, center;
+    background-size: cover;
   }
 
   .hero-content {
+    max-width: 62%;
     padding-left: 34px;
-  }
-
-  .hero-burger {
-    width: min(310px, 112%);
   }
 
   .product-row {
@@ -1000,6 +1001,11 @@ button:disabled {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     overflow: visible;
     gap: 16px;
+  }
+
+  .product-card img {
+    height: auto;
+    aspect-ratio: 1.38;
   }
 
   .admin-layout {
@@ -1027,9 +1033,6 @@ button:disabled {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .product-card img {
-    aspect-ratio: 1.38;
-  }
 }
 
 @media (max-width: 600px) {
@@ -1062,42 +1065,48 @@ button:disabled {
   }
 
   .hero {
-    grid-template-columns: minmax(0, 1fr) 34%;
-    min-height: 168px;
+    min-height: 190px;
     max-width: 100%;
     border-radius: 24px;
     overflow: hidden;
+    background-position: left center, center, center, center, 58% center, center;
+    background-size: cover;
   }
 
   .hero::after {
-    width: 132px;
-    height: 132px;
-    inset: auto -38px -52px auto;
+    width: 190px;
+    height: 130px;
+    inset: 22px auto auto 50%;
+    transform: translateX(-50%);
   }
 
   .hero-content {
     min-width: 0;
+    max-width: 100%;
+    justify-items: center;
+    align-content: center;
     gap: 7px;
-    padding: 18px 0 18px 16px;
+    padding: 20px 18px;
+    text-align: center;
   }
 
   .eyebrow {
     max-width: 100%;
     font-size: 0.58rem;
     letter-spacing: 0.1em;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .hero h1 {
-    max-width: 8ch;
-    font-size: clamp(1.86rem, 9vw, 2.45rem);
-    line-height: 0.98;
-    overflow-wrap: anywhere;
+    max-width: 9ch;
+    font-size: clamp(2.15rem, 11.4vw, 3rem);
+    line-height: 0.95;
+    text-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
   }
 
   .subtitle {
-    max-width: 158px;
-    font-size: 0.76rem;
+    max-width: 210px;
+    font-size: 0.78rem;
     line-height: 1.35;
   }
 
@@ -1109,14 +1118,6 @@ button:disabled {
     min-height: 36px;
     padding: 0 14px;
     font-size: 0.78rem;
-  }
-
-  .hero-burger {
-    width: 128px;
-    max-width: none;
-    height: 100%;
-    border-radius: 24px 0 0 24px;
-    transform: translateX(18px) scale(1.02);
   }
 
   .menu-section {
@@ -1140,13 +1141,15 @@ button:disabled {
   }
 
   .product-row {
-    grid-auto-flow: row;
-    grid-auto-columns: initial;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: 170px;
+    grid-template-columns: none;
     gap: 10px;
-    overflow: visible;
-    padding: 0;
-    scroll-snap-type: none;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 0 2px 8px;
+    scroll-snap-type: x mandatory;
   }
 
   .product-card {
@@ -1154,12 +1157,13 @@ button:disabled {
   }
 
   .product-card img {
-    aspect-ratio: 1.28;
+    height: 140px;
   }
 
   .card-body {
     gap: 6px;
     padding: 9px;
+    min-height: 102px;
   }
 
   .card-body span {
@@ -1213,20 +1217,21 @@ button:disabled {
 
 @media (max-width: 390px) {
   .hero {
-    grid-template-columns: minmax(0, 1fr) 32%;
+    min-height: 184px;
+    background-position: left center, center, center, center, 58% center, center;
+    background-size: cover;
   }
 
   .hero-content {
-    padding: 16px 0 16px 14px;
+    padding: 18px 14px;
   }
 
   .hero h1 {
-    font-size: 1.72rem;
+    font-size: 2rem;
   }
 
-  .hero-burger {
-    width: 116px;
-    transform: translateX(20px) scale(1.02);
+  .product-row {
+    grid-auto-columns: 164px;
   }
 
   .admin-page {
