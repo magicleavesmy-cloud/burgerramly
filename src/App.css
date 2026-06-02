@@ -34,7 +34,7 @@ button:disabled {
 .app {
   position: relative;
   min-height: 100vh;
-  padding: 18px;
+  padding: 16px;
   overflow-x: hidden;
 }
 
@@ -46,7 +46,7 @@ button:disabled {
   align-items: center;
   gap: 10px;
   width: fit-content;
-  margin: 0 0 16px auto;
+  margin: 0 0 14px auto;
   padding: 10px 12px 10px 18px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
@@ -70,7 +70,7 @@ button:disabled {
 
 .hero {
   position: relative;
-  min-height: 540px;
+  min-height: 390px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -80,18 +80,18 @@ button:disabled {
     radial-gradient(circle at 24% 84%, rgba(242, 184, 75, 0.2), transparent 22rem),
     linear-gradient(90deg, rgba(5, 5, 5, 0.9) 0%, rgba(9, 8, 7, 0.58) 45%, rgba(9, 8, 7, 0.16) 100%),
     linear-gradient(0deg, rgba(5, 5, 5, 0.82) 0%, rgba(5, 5, 5, 0.22) 52%, rgba(5, 5, 5, 0.36) 100%),
-    url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1800&auto=format&fit=crop");
-  background-position: center;
-  background-size: cover;
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1JfAg-bgh92f8oT-LDfc0Kgh6w283QAISSw&s");
+  background-position: center 44%;
+  background-size: 108%;
   box-shadow:
-    0 38px 100px rgba(0, 0, 0, 0.56),
+    0 30px 82px rgba(0, 0, 0, 0.52),
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    inset 0 -120px 160px rgba(0, 0, 0, 0.28);
+    inset 0 -92px 132px rgba(0, 0, 0, 0.26);
 }
 
 .hero-content {
-  width: min(860px, 100%);
-  padding: 38px 22px;
+  width: min(760px, 100%);
+  padding: 30px 22px;
 }
 
 .eyebrow,
@@ -107,20 +107,20 @@ button:disabled {
 
 .hero h1 {
   max-width: 980px;
-  margin: 14px 0 16px;
+  margin: 10px 0 12px;
   color: #fff8ec;
-  font-size: clamp(3.35rem, 12vw, 9rem);
-  line-height: 0.92;
+  font-size: clamp(3rem, 9.5vw, 7.2rem);
+  line-height: 0.96;
   letter-spacing: 0;
   text-wrap: balance;
 }
 
 .subtitle {
-  max-width: 590px;
+  max-width: 540px;
   margin: 0;
   color: rgba(255, 247, 232, 0.78);
-  font-size: clamp(1rem, 1.5vw, 1.22rem);
-  line-height: 1.72;
+  font-size: clamp(0.96rem, 1.25vw, 1.1rem);
+  line-height: 1.62;
   letter-spacing: 0.01em;
 }
 
@@ -129,7 +129,7 @@ button:disabled {
   flex-wrap: wrap;
   align-items: center;
   gap: 14px;
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .hero-actions button,
@@ -189,18 +189,18 @@ button:disabled {
 
 .menu-section {
   width: min(1180px, 100%);
-  margin: 46px auto 0;
+  margin: 36px auto 0;
 }
 
 .section-heading {
   display: grid;
   gap: 8px;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .section-heading h2 {
   margin: 0;
-  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-size: clamp(1.8rem, 4.6vw, 3.5rem);
   line-height: 1.02;
   letter-spacing: 0;
 }
@@ -208,7 +208,7 @@ button:disabled {
 .categories {
   display: flex;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   padding: 2px 0 12px;
   overflow-x: auto;
   scrollbar-width: none;
@@ -248,15 +248,15 @@ button:disabled {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 16px;
 }
 
 .product-card {
   overflow: hidden;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: 28px;
+  border-radius: 24px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.038)),
     rgba(22, 19, 15, 0.82);
@@ -281,7 +281,7 @@ button:disabled {
 .product-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 1.18;
+  aspect-ratio: 1.32;
   object-fit: cover;
   transform: scale(1.01);
   transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -293,8 +293,8 @@ button:disabled {
 
 .card-body {
   display: grid;
-  gap: 14px;
-  padding: 20px;
+  gap: 11px;
+  padding: 16px;
 }
 
 .card-body span {
@@ -309,7 +309,7 @@ button:disabled {
 .cart-item h3 {
   margin: 0;
   color: #fff8ec;
-  font-size: 1.22rem;
+  font-size: 1.1rem;
   line-height: 1.2;
   letter-spacing: 0.005em;
 }
@@ -324,14 +324,14 @@ button:disabled {
 .card-footer p {
   margin: 0;
   color: rgba(255, 247, 232, 0.78);
-  font-size: 1.08rem;
+  font-size: 1rem;
   font-weight: 900;
 }
 
 .card-footer button {
-  min-height: 46px;
-  min-width: 78px;
-  padding: 0 22px;
+  min-height: 42px;
+  min-width: 72px;
+  padding: 0 18px;
 }
 
 .cart-backdrop {
@@ -706,26 +706,26 @@ button:disabled {
 
 @media (min-width: 720px) {
   .app {
-    padding: 26px;
+    padding: 22px;
   }
 
   .hero-content {
-    padding: 54px;
+    padding: 42px;
   }
 
   .product-grid {
-    gap: 24px;
+    gap: 18px;
   }
 }
 
 @media (min-width: 1060px) {
   .app {
-    padding: 30px;
+    padding: 26px;
   }
 
   .hero {
-    min-height: 620px;
-    border-radius: 42px;
+    min-height: 455px;
+    border-radius: 36px;
   }
 }
 
@@ -739,18 +739,19 @@ button:disabled {
   }
 
   .hero {
-    min-height: 500px;
+    min-height: 360px;
     border-radius: 26px;
-    background-position: 61% center;
+    background-position: 58% center;
+    background-size: cover;
   }
 
   .hero-content {
-    padding: 30px 18px;
+    padding: 24px 18px;
   }
 
   .hero h1 {
-    font-size: clamp(3rem, 17vw, 4.75rem);
-    line-height: 0.98;
+    font-size: clamp(2.6rem, 13.5vw, 3.75rem);
+    line-height: 1;
     max-width: 8ch;
   }
 
@@ -768,7 +769,7 @@ button:disabled {
   }
 
   .menu-section {
-    margin-top: 32px;
+    margin-top: 28px;
   }
 
   .product-grid {

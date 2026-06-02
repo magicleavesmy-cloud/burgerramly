@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./App.css";
 
 const categories = ["Burger", "Pizza", "Drinks", "Dessert"];
+const whatsappNumber = "601165302622";
 
 const addOnsByCategory = {
   Burger: [
@@ -135,6 +136,33 @@ function formatPrice(value) {
   return `RM ${value.toFixed(2)}`;
 }
 
+function buildWhatsAppOrderMessage(cart, subtotal) {
+  const itemLines = cart
+    .map((item) => {
+      const addOnLines =
+        item.addOns?.map((addOn) => `  + ${addOn.name}`).join("\n") ?? "";
+      const itemTotal = item.price * item.quantity;
+
+      return [
+        `- ${item.name} x${item.quantity}`,
+        addOnLines,
+        `  ${formatPrice(itemTotal)}`,
+      ]
+        .filter(Boolean)
+        .join("\n");
+    })
+    .join("\n\n");
+
+  return [
+    "🍔 Burger Ramly Order",
+    "",
+    "Items:",
+    itemLines,
+    "",
+    `Subtotal: ${formatPrice(subtotal)}`,
+  ].join("\n");
+}
+
 function App() {
   const [activeCategory, setActiveCategory] = useState("Burger");
   const [cart, setCart] = useState([]);
@@ -237,6 +265,19 @@ function App() {
     setCart((currentCart) =>
       currentCart.filter((item) => item.cartKey !== cartKey),
     );
+  };
+
+  const checkoutViaWhatsApp = () => {
+    if (cart.length === 0) {
+      return;
+    }
+
+    const message = buildWhatsAppOrderMessage(cart, subtotal);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message,
+    )}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -491,7 +532,12 @@ function App() {
                   <span>Subtotal</span>
                   <strong>{formatPrice(subtotal)}</strong>
                 </div>
-                <button disabled={cart.length === 0}>Checkout</button>
+                <button
+                  disabled={cart.length === 0}
+                  onClick={checkoutViaWhatsApp}
+                >
+                  Checkout via WhatsApp
+                </button>
               </div>
             </motion.aside>
           </>
